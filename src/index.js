@@ -18,7 +18,7 @@ class App extends React.Component {
     console.log("my component was just updated - it rendered!");
   }
 
-  render() {
+  renderContent() {
     if (this.state.errorMessage && !this.state.lat) {
       return (
         <div>
@@ -32,6 +32,9 @@ class App extends React.Component {
     }
     return <Spinner />;
   }
-}
 
+  render() {
+    return <div className="border red">{this.renderContent()}</div>;
+  }
+}
 ReactDOM.render(<App />, document.querySelector("#root"));
